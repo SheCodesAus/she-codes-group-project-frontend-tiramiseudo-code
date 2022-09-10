@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.footer-bottom {
+    background-color: #393939;
+    color: #ffffff;
+    font-family: "Poppins";
+    font-size: 16px;
+    font-weight: 500;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    /* margin-right: 4px; */
+    order: 3;
+}
+
+.footer-col-left {
+    margin-right: 0;
+    display: flex;
+    justify-content: center;
+    width:40%;
+}
+
+ .footer-col-right{
+  /* margin-right: 100px; */
+  width: 60%;
+} 
+
+img {
+    width: 40%;
+}
+
+p {
+    font-family: "Poppins";
+    color:#ffffff;
+    font-size: 16px;
+}
+
+h2{
+    font-family: "Poppins";
+    color:#611243;
+    font-size: 24px;
+    font-weight: 600px;
+}
+
+.alt-heading {
+        font-family: "Poppins";
+        color:#ffffff;
+        font-size: 24px;
+        font-weight: 600px;
+    }  
+
+.footer{
+    padding-bottom: 16px;
+    padding-top: 12px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    display: flex;
+    position: relative;
+    background-color: #611243;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .footer{
+        flex-direction: column;
+        padding-top: 20px;
+    }
+
+    .footer-col-right {
+    margin: 0 auto;
+    padding-left: 50px;
+    padding-right: 50px;
+    /* width: 100%; */
+    }
+
+    .footer-col-left{
+        padding-top: 20px;
+    }
+
+    .footer-col-left img{
+        width: 60%;
+    }
+
+    .footer-bottom{
+    margin: 0 auto;
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+    .footer-col-right {
+    margin: 0 auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 80%;
+    }
+
+    .footer-col-left {
+    width: 70%;
+    padding-top: 30px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {...} */
+
+/* Large devices (laptops/desktops, 992px and up) */
+/* @media only screen and (min-width: 992px) {...} */
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) {...} */
