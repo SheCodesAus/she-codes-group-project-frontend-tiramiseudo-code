@@ -49,7 +49,7 @@ const handleClick = event => {
                     <Link className="nav-link" to="/">heading three</Link>
                 </div>
                 <div className="nav-bar-right">
-                <Link to="/" ><button className="join-btn" type="submit">Join now</button></Link>
+                <Link to="/signup" ><button className="join-btn" type="submit">Join now</button></Link>
                 <Link to="/" ><button className="login-btn" type="submit">Sign in</button></Link>
                 </div>
                 <div className="hamburger-menu" onClick={handleClick}>
