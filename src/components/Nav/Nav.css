@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 .nav{
     max-width: 1128px;
     margin: auto;
@@ -20,6 +22,9 @@
     margin-right: auto;
 }
 
+.logo{
+    width:60%;
+}
 
 
 .nav-bar-left{
@@ -28,6 +33,27 @@
     margin-right: 4px;
     order: 3;
 }
+
+.nav-bar-left a {
+    font-family: "Poppins";
+    font-weight:500;
+    text-decoration: none;
+    color: #000000;
+    margin-left:20px;
+    margin-right: 20px;
+
+}
+
+.nav-bar-left a:hover {
+    text-decoration: underline;
+    text-decoration-color: #611243;
+}
+
+.nav-bar-left a:focus {
+    border: 2px solid #124250;
+}
+
+
 
 .nav-bar-left::after{
     display: flex;
@@ -61,6 +87,7 @@
     padding-right: 24px;
     text-align: center;
     font-size: 16px;
+    font-family: "Poppins";
     font-weight: 600;
     box-shadow: 0 0 0 1px #611243;
     background-color: transparent;
@@ -84,6 +111,7 @@
     padding-right: 24px;
     text-align: center;
     font-size: 16px;
+    font-family: "Poppins";
     font-weight: 600;
     box-shadow: 0 0 0 1px var(--color-button-container-secondary-emphasis-border);
     background-color: transparent;
@@ -97,9 +125,65 @@
     transition-delay:200ms;
 }
 
-a {
+/* a {
     margin-left:20px;
     margin-right: 20px;
+} */
+
+/* Hamburger menu styles */
+
+.hamburger-menu {
+    display: none;
 }
 
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #611243;
+    /* border: 1px solid #611243; */
+ }
 
+@media only screen and (max-width: 768px){
+    .nav-bar-left{
+        position: fixed;
+        /* left: -100%; */
+        top: 5rem;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-bar-left.active {
+        left:0;
+    }
+
+    .nav-bar-left a {
+        margin: 2.5rem 0;
+    }
+
+    .hamburger-menu{
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}

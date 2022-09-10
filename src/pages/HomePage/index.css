@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.homepage-container{
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    max-width: 1128px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    
+
+}
+
+.image-container {
+    width: 50%;
+}
+
+.home-image{
+    width: 100%;
+}
+
+.home-h2 {
+    font-family: "Poppins";
+    font-size: 24px;
+    font-weight: 600;
+    color: #611243;
+}
+
+.home-h3 {
+    font-family: "Poppins";
+    font-size: 18.72px;
+    font-weight: 600;
+    color: #611243;
+}
+
+.home-p {
+    font-family: "Poppins";
+    font-size: 16px;
+    /* font-weight: 600; */
+    color: #393939;
+}
+
+.p-style-2{
+    font-family: "Poppins";
+    font-size: 14px;
+    /* font-weight: 600; */
+    color: #393939;
+}
+
+.intext-link{
+    font-size: 14px;
+    font-family: "Poppins";
+    /* font-weight: 600; */
+    color: #611243;
+    text-decoration: none;
+}  
+
+.intext-link:hover {
+    text-decoration: underline;
+    text-decoration-color: #611243;
+}
+
+.intext-link a:focus {
+    border: 2px solid #124250;
+}
+
+
+.left-side-home {
+    width: 37%;
+    /* display: flex;
+    flex-wrap: wrap; */
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+
+   .homepage-container{
+    width: 100%;
+   }
+   
+    .left-side-home {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .image-container {
+        display: none;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {...} */
+
+/* Large devices (laptops/desktops, 992px and up) */
+/* @media only screen and (min-width: 992px) {...} */
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) {...} */
