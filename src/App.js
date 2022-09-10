@@ -1,21 +1,18 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Nav from "./components/Nav/Nav";
-import HomePage from "./pages/HomePage/index";
+import Footer from "./components/Footer/Footer";
+import AllyRouter from "./Routes/AllyRouter";
 
 
 function App() {
   return (
-    <div>
-        <Router>
+    <div className="App-2">
       <Nav />
-      <Routes>
-        <Route exact path="/" element={<HomePage />} />
-      </Routes>
-    </Router>
+      <AllyRouter/>
+      <Footer/>
     </div>
-   
   );
+ 
 }
 
 export default App;
