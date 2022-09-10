@@ -2,13 +2,16 @@ import React from "react";
 import Nav from "./components/Nav/Nav";
 import Footer from "./components/Footer/Footer";
 import AllyRouter from "./Routes/AllyRouter";
+import LoginForm from "./components/LoginForm/Login";
 
 function App() {
   return (
     <div className="App-2">
       <Nav />
       <AllyRouter/>
+      <LoginForm/>
       <Footer/>
+      
     </div>
   );
  
