@@ -1,55 +1,88 @@
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom'
-import "./Login.css"; 
-//import mockdata from "./mockdata.js";
-// const mockup=require('./mockdata.json')
-//console.log(mockdata)
+import { useNavigate } from "react-router-dom";
+import "./Login.css";
 
 function LoginForm() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [credentials, setCredentials] = useState({
     username: "",
     password: "",
   });
-    
+
+  const [errormessage, setErrormessage] = useState([]);
+
   const handleChange = (e) => {
     const { id, value } = e.target;
-    setCredentials({...credentials, [id]: value })
+    setCredentials({ ...credentials, [id]: value });
   };
 
-  const postData = async () =>{
+  const postData = async () => {
     const response = await fetch(
-      `${process.env.REACT_APP_API_URL}api-token-auth/`, {
-      method: "post",
-      headers: {"Content-Type": "application/json",},
-      body: JSON.stringify(credentials),
-    })
+      `${process.env.REACT_APP_API_URL}api-token-auth/`,
+      {
+        method: "post",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(credentials),
+      }
+    );
     return response.json();
-  }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (credentials.username && credentials.password) {
-      postData().then(response => {
-        window.localStorage.setItem('token', response.token)
-        navigate('/')
-      })
+      postData().then((response) => {
+        if (response.token) {
+          window.localStorage.setItem("token", response.token);
+          setErrormessage([]);
+          //navigate("/");
+        } else if (response.non_field_errors) {
+          setErrormessage(response.non_field_errors);
+          console.log(response.non_field_errors);
+          
+        } 
+        else {
+          //naviage to 404 page
+        }
+      });
+    }else if(credentials.username== ""||credentials.password== "")
+    {
+        console.log("empty field")
+        setErrormessage(["Empty field"]);
     }
+    
   };
 
   return (
-    <form className="login-form-display">
+    <form className="form-display">
       <div className="input-container">
         <label htmlFor="username">Username:</label>
-        <input type="text" id="username" placeholder="" onChange={handleChange} />
+        <input
+          type="text"
+          id="username"
+          placeholder="Enter username"
+          onChange={handleChange}
+        />
       </div>
       <div className="input-container">
         <label htmlFor="password">Password:</label>
-        <input type="password" id="password" placeholder="" onChange={handleChange}/>
+        <input
+          type="password"
+          id="password"
+          placeholder="Password"
+          onChange={handleChange}
+        />
       </div>
-      {/* <div className="button-container"> */}
-      <button className="button-login" type="submit" onClick={handleSubmit}>Login</button>
-      {/* </div> */}
+      <div>
+        {errormessage.map((message, index) => (
+          <div>{message}</div>
+        ))}
+      </div>
+      <div className="button-container">
+        <button type="submit" onClick={handleSubmit}>
+          Login
+        </button>
+      </div>
     </form>
   );
 }
