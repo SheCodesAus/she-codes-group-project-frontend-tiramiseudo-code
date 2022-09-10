@@ -15,6 +15,8 @@ function Nav() {
                     <Link to="/">heading one</Link>
                     <Link to="/">heading two</Link>
                     <Link to="/">heading three</Link>
+            
+                    
                 </div>
                 <div className="nav-bar-right">
                 <button className="join-btn" type="submit" onClick={<Link to="/" ></Link>}>Join now </button> 
