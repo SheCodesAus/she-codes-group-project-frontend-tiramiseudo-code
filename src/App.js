@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage/index";
 import AllUsersPage from "./pages/AllProfilesPage/index";
 import OneUserPage from "./pages/ProfileViewPage/index";
 import HelloPage from "./pages/HelloPage"
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/AllProfiles" element={<AllUsersPage />} />
         <Route exact path="/ProfilesView" element={<OneUserPage />} />
         <Route exact path="/hello" element={<HelloPage />} />
+        <Route exact path="/login" element={<LoginPage />} />
       </Routes>
     </Router>
     </div>

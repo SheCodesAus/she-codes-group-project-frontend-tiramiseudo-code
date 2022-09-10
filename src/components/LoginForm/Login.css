@@ -1,0 +1,66 @@
+/* * {
+    box-sizing: border-box;
+    padding: 10px 20px;
+    margin:0;
+    background-color: white;
+    overflow-x: visible;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+.input-container {
+    width: 50;
+    background:white  ;
+    flex-direction:column;
+     justify-content: center;
+     align-items: center;
+    }
+.input-container input{
+        width :60%;
+        padding : 10px 20px;
+        outline: none;
+        margin: 20px 0;
+        text-align: Center;
+        border: 2px solid #611243;
+        width: 100%;
+        border-radius: 5px;
+    }
+.button-login{
+        line-height: 24px;
+        padding: 10px 30px;
+        background: #601243 ;
+        color: white;
+        border:2px solid #ECF0F1;
+        outline: none;
+        border-radius: 5px ;
+        text-transform: uppercase;
+        cursor: pointer;
+        display: flex;
+        margin:  0 auto;
+        padding-left: 38px;
+        
+    }
+    h1{
+        color: white;
+        background: transparent;
+        text-shadow: 0 2px 2px black;
+    }
+    
+    .login-form-display {
+        width:50%;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
