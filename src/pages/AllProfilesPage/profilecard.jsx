@@ -18,7 +18,7 @@ function ProfileCard(props) {
             <h1>{userData.first_name }{userData.last_name }</h1>
             <h2>{userData.pronoun }</h2>
             <h3>{userData.bio}</h3>
-            <button type="submit" onClick={handleSubmit}>Get To Know Me</button>
+            <button type="submit" onClick={handleSubmit}>See More</button>
             </Link>
         </div>
     )

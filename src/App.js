@@ -9,12 +9,10 @@ function App() {
     <div className="App-2">
       <Nav />
       <AllyRouter/>
-      <LoginForm/>
       <Footer/>
       
     </div>
   );
- 
 }
 
 // This is a test

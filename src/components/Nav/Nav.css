@@ -53,8 +53,6 @@
     border: 2px solid #124250;
 }
 
-
-
 .nav-bar-left::after{
     display: flex;
     height: 37px;
@@ -136,7 +134,7 @@
     display: none;
 }
 
-.bar {
+    .bar {
     display: block;
     width: 25px;
     height: 3px;
@@ -145,7 +143,7 @@
     transition: all 0.3s ease-in-out;
     background-color: #611243;
     /* border: 1px solid #611243; */
- }
+    } 
 
 @media only screen and (max-width: 768px){
     .nav-bar-left{

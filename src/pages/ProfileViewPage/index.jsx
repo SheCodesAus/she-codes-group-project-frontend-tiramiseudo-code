@@ -4,13 +4,12 @@ import React from "react";
 import { oneUser } from "./data";
 import { useNavigate  } from "react-router-dom";
 // import { useParams,Link, useNavigate } from "react-router-dom";
- 
+
 function OneUserPage() {
     // When backend API is ready
     // const [oneUserData, setOneUserData] = useState({profile: [] });
     // const { id } = useParams();
     // const navigate = useNavigate();
-   
     // useEffect(() => {
     //     fetch(`${process.env.REACT_APP_API_URL}users/${id}`)
     //     .then((results) => {

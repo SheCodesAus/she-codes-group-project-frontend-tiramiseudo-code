@@ -33,7 +33,7 @@ function AllUsersPage() {
     return(
         <div>
             <div id="dropDown">
-                 <FilterDropdown skillData={skillList}/>
+                <FilterDropdown skillData={skillList}/>
             </div>
 
 
@@ -44,9 +44,7 @@ function AllUsersPage() {
             </div>
         </div>
     );
-  
- }
-
+}
 
 /* <Footer />  */
 

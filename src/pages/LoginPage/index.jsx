@@ -4,7 +4,7 @@ import LoginForm from '../../components/LoginForm/Login'
 
 function LoginPage(){
     return(    
-         <LoginForm/>
+        <LoginForm/>
     );
 
 

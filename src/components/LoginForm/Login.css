@@ -13,8 +13,8 @@
     width: 50;
     background:white  ;
     flex-direction:column;
-     justify-content: center;
-     align-items: center;
+    justify-content: center;
+    align-items: center;
     }
 .input-container input{
         width :60%;
@@ -65,7 +65,7 @@
 }
 
 
- input, a:focus {
+input, a:focus {
     border: 2px solid #124250;
 }
 

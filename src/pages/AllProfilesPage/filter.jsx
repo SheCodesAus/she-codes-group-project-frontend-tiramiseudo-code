@@ -1,4 +1,5 @@
 import React from "react";
+import "./filter.css"
 
 function FilterDropdown(props) {
     const { skillData } = props;
@@ -6,8 +7,8 @@ function FilterDropdown(props) {
     return(
 
         <form id="filter">
-            <label >Find community members with the skill you are interested in:</label>
-            <select >
+            <label>I am looking for community members who specialise in:  </label>
+            <select class="dropdown">
                 {skillData.map((skillsData, key) => {
                     return(
                     <option value="skill_name">{skillsData.skill_name}
