@@ -3,6 +3,7 @@
 import React from "react";
 import { oneUser } from "./data";
 import { useNavigate  } from "react-router-dom";
+import "./index.css"
 // import { useParams,Link, useNavigate } from "react-router-dom";
  
 function OneUserPage() {
@@ -50,23 +51,31 @@ function OneUserPage() {
  
  
     return(
-       <div>
-           <img src={oneUser.photo} alt=""/>
-           <h2>{oneUser.first_name}{oneUser.last_name}</h2>
-           {/* <h3>Created at: {users.date_created}</h3> */}
-           {/* <h3>{`Status: ${users.is_open}`}</h3> */}
-           <h3>Bio:{oneUser.bio}</h3>
-           <h3>Skills:</h3>
-               <ul>
-                   {oneUser.skills.map((skillsData, key) => {
-                       return (
-                       <li><img src={skillsData.icon} alt=""/> {skillsData.skill_name}
-                       </li>
-                       );
-                   })}
-               </ul>
-            <button type="submit" onClick={handleSubmit}>Back to Home</button>
-       </div>
+        <div>
+            <div className="user-container">
+                <img className="user-image" src={oneUser.photo} alt="Avater for user"/>
+                <div className="user-header">
+                    <h2 className="user-h2">{oneUser.first_name}{oneUser.last_name}</h2>
+                    <h3 className="user-h3">Brisbane, Australia</h3>
+                    <h3 className="user-h3">She/Her</h3>
+                </div>
+            </div>
+          
+            <div className="user-body">
+                <h3 className="user-h3">Bio:</h3>
+                <p className="user-p">{oneUser.bio}</p>
+                <h3 className="user-h3">Skills:</h3>
+                <ul>
+                    {oneUser.skills.map((skillsData, key) => {
+                        return (
+                        <li className="skill-list"><img className="icon" src={skillsData.icon} alt=""/> {skillsData.skill_name}
+                        </li>
+                        );
+                    })}
+                </ul>
+                <button className="user-button" type="submit" onClick={handleSubmit}>Find me on LinkedIn</button>
+            </div>
+        </div>
    );
 }
 
