@@ -64,7 +64,7 @@
     content: var(--tw-content);
     
 }
-
+/* HOME */
 .nav-bar-right{
     column-gap: 8px;
     justify-content: flex-end;
