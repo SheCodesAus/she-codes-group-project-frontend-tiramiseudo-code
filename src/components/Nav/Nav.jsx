@@ -13,8 +13,8 @@ function Nav() {
                         <img className="logo" src={'./allyLab_inline.png'} alt="AllyLab logo"/>
                     </Link>
                 </div>
-                     <div className="nav-bar-left">
-                     <Link className="nav-link" to="/">Profiles</Link
+                <div className="nav-bar-left">
+                     <Link className="nav-link" to="/allProfiles">Profiles</Link>
                 </div>
                 <div className="nav-bar-right">
                 <Link to="/signup" ><button className="join-btn" type="submit">Join now</button></Link>
@@ -23,7 +23,7 @@ function Nav() {
             </nav>
         </div>
     )
-}
+};
 
 
 
