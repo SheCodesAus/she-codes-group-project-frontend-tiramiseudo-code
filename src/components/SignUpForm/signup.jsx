@@ -13,6 +13,7 @@ const initialState = {
 }
 function SignUpFrom () {
     const [formData, setFormData] = useState(initialState);
+    const [isSigningUp, setIsSigningUp] = useState(false);
 
     const handleChange = (e) => {
         const newState = {
@@ -23,10 +24,34 @@ function SignUpFrom () {
         setFormData(newState);
     }
 
-    const handleForm = (e) => {
+    const handleForm = async (e) => {
         e.preventDefault();
+        const signUpUrl = `${process.env.REACT_APP_API_URL}users/`;
+        const bodyData = {
+            first_name: formData.firstName,
+            last_name: formData.lastName,
+            email: formData.email,
+            password: formData.password,
+            pronoun: formData.proNoun,
+            // photo: formData.photo,
+            bio: formData.bio,
+            skills: formData.skills,
+        };
 
-        
+        try {
+            setIsSigningUp(true);
+            const result = await fetch(signUpUrl, {
+                method: 'POST',
+                body: bodyData
+            });
+            const data = await result.json();
+
+            setIsSigningUp(false);
+            alert('Signup done successfully')
+        } catch (error) {
+            setIsSigningUp(false);
+            alert('Error in signup, please try again in a moment')
+        }
     }
 
     const renderInput = ({name="", type="text", value="", label=""}) => {
@@ -109,7 +134,7 @@ function SignUpFrom () {
                     })}
 
                     {renderInput({
-                        name: 'picture',
+                        name: 'photo',
                         type: 'file',
                         label: 'Picture'
                     })}
@@ -119,7 +144,14 @@ function SignUpFrom () {
                     {renderBio()}
                 </div>
                 <div className='signup-buttons'>
-                    <button className='login-btn'>Submit</button>
+                    <button 
+                    type="submit"
+                    className='login-btn'
+                    disabled={isSigningUp}
+                    >
+                        {isSigningUp ? 'Please wait...' : 'Submit'}
+                    </button>
+
                 </div>
             </div>
         </form>
