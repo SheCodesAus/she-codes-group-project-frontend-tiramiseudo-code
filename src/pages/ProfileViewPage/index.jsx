@@ -56,7 +56,7 @@ function OneUserPage() {
                 <div className="user-header">
                     <h2 className="user-h2">{oneUser.first_name}{oneUser.last_name}</h2>
                     <h3 className="user-h3">Brisbane, Australia</h3>
-                    <h3 className="user-h3">She/Her</h3>
+                    <h3 className="user-h3">{oneUser.pronoun}</h3>
                 </div>
             </div>
           
