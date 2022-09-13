@@ -9,11 +9,11 @@ function ProfileCard(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        navigate("/ProfileView");}
+        navigate(`/ProfileView/${userData.id}`);}
 
     return (
         <div className="profile-card">
-            <Link to="/AllProfiles">
+            <Link to={`/ProfileView/${userData.id}`}>
             <img src={userData.photo} alt=""/>
             <h1>{userData.first_name }{userData.last_name }</h1>
             <h2>{userData.pronoun }</h2>
