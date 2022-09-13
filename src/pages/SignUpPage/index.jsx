@@ -1,3 +1,10 @@
-export default function SignUpPage(){
-    return(<></>)
+import SignUpComponent from '../../components/SignUpForm/signup.jsx';
+
+function SignUpPage () {
+
+    return (
+        <SignUpComponent />
+    )
 }
+
+export default SignUpPage;

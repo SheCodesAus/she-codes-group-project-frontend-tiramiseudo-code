@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useNavigate  } from "react-router-dom";
 
- 
 function OneUserPage() {
     const [oneUserData, setOneUserData] = useState({profile: [] });
     const { id } = useParams();
@@ -12,7 +11,6 @@ function OneUserPage() {
     const handleSubmit = (e) => {
                 e.preventDefault();
                 navigate("/AllProfiles");}
-
 
     useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}users/${id}`)

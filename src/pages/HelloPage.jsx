@@ -2,14 +2,12 @@ import React, { useState, useEffect } from "react";
 // import React from "react";
 // import { oneUser } from "./data";
 // import { useParams } from "react-router-dom";
- 
 
 
 function HelloPage() {
     // When backend API is ready
     const [helloData, setHelloData] = useState({"String": ""});
     
-   
     useEffect(() => {
         fetch(`${process.env.REACT_APP_API_URL}hello`)
         .then((results) => {
@@ -22,7 +20,7 @@ function HelloPage() {
 
     return(
         <div>
-           <h1>{helloData.String}</h1> 
+            <h1>{helloData.String}</h1> 
         </div>
     );
     }
@@ -48,5 +46,4 @@ function HelloPage() {
 // }
 
 
- 
 export default HelloPage;
