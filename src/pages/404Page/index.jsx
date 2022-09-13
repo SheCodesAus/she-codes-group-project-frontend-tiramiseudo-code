@@ -1,3 +1,5 @@
-export default function Page404() {
-    return (<></>)
+export default function () {
+    return (<>
+    
+    </>)
 }

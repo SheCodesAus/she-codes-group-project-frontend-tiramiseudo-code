@@ -31,26 +31,24 @@ function LoginForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (credentials.username && credentials.password) {
-      postData().then((response) => {
-        if (response.token) {
-          window.localStorage.setItem("token", response.token);
-          setErrormessage([]);
-          //navigate("/");
-        } else if (response.non_field_errors) {
-          setErrormessage(response.non_field_errors);
-          console.log(response.non_field_errors);
-          
-        } 
-        else {
-          //naviage to 404 page
-        }
-      });
-    }else if(credentials.username== ""||credentials.password== "")
-    {
-        console.log("empty field")
-        setErrormessage(["Empty field"]);
+      postData()
+        .then((response) => {
+          if (response.token) {
+            window.localStorage.setItem("token", response.token);
+            setErrormessage([]);
+            navigate("/");
+          } else if (response.non_field_errors) {
+            setErrormessage(response.non_field_errors);
+            console.log(response.non_field_errors);
+          }
+        })
+        .catch((err) => {
+          navigate("/404");
+        });
+    } else if (credentials.username == "" || credentials.password == "") {
+      console.log("empty field");
+      setErrormessage(["Empty field"]);
     }
-    
   };
 
   return (
