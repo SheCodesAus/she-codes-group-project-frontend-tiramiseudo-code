@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import {useState} from 'react';
-import "./Nav.css";
+import "./Nav.css"
 
 function Nav() {
 
@@ -24,16 +24,16 @@ function Nav() {
 //     navMenu.classList.remove("active");
 // }
 
-// const [isActive, setIsActive] = useState(false);
+// const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
-const handleClick = event => {
-    // setIsActive(current => !current);
-    event.currentTarget.classList.toggle('hamburger-menu');
+// const handleClick = event => {
+//     setHamburgerOpen(current => !current);
+
+
+    // event.currentTarget.classList.toggle('hamburger-menu');
     // event.currentTarget.classList.add('hamburger-menu');
-    event.currentTarget.classList.remove('hamburger-menu');
+    // event.currentTarget.classList.remove('hamburger-menu');
 
-    
-};
 
     return (
         <div>
@@ -43,20 +43,28 @@ const handleClick = event => {
                         <img className="logo" src={'./allyLab_inline.png'} alt="AllyLab logo"/>
                     </Link>
                 </div>
-                <div className="nav-bar-left">
-                    <Link className="nav-link" to="/">heading one</Link>
-                    <Link className="nav-link" to="/">heading two</Link>
-                    <Link className="nav-link" to="/">heading three</Link>
-                </div>
-                <div className="nav-bar-right">
-                <Link to="/" ><button className="join-btn" type="submit">Join now</button></Link>
-                <Link to="/" ><button className="login-btn" type="submit">Sign in</button></Link>
-                </div>
-                <div className="hamburger-menu" onClick={handleClick}>
-                    <span className="bar"></span>
-                    <span className="bar"></span>
-                    <span className="bar"></span>
-                </div>
+                     <div className="nav-bar-left">
+                     <Link className="nav-link" to="/">Profiles</Link>
+                 </div>
+                 <div className="nav-bar-right">
+                 <Link to="/" ><button className="join-btn" type="submit">Join now</button></Link>
+                 <Link to="/" ><button className="login-btn" type="submit">Sign in</button></Link>
+                 </div>
+                 {/* </div>
+                {hamburgerOpen ? (
+                    <div className="hamburger-nav">
+                        <Link className="nav-link" to="/">Profiles</Link>
+                        <Link className="nav-link" to="/">Sign in</Link>
+                        <Link className="nav-link" to="/">Join now</Link>
+                    </div>
+                ):(null) }
+
+
+                     <div className="hamburger-icon" onClick={handleClick}>
+                      <span className="bar"></span>
+                      <span className="bar"></span>
+                      <span className="bar"></span>
+                  </div> */}
             </nav>
         </div>
     )
