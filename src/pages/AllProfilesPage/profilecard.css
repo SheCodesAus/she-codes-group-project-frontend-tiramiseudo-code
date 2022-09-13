@@ -1,0 +1,77 @@
+.profile-card {
+    /* width: 30%; */
+    display: inline-block;
+    border: 1px solid #124250;
+    box-shadow: 0px 0px 5px gray;
+    background-color: white;
+    color: #254312;
+    text-align: center; 
+    border-radius: 24px;
+    font-family: 'Poppins';
+}
+
+.profile-card img {
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+    border-radius: 24px;
+}
+
+.profile-card h1 {
+    color: #124250;
+}
+
+.profile-card h2 {
+    color: #254312;
+}
+
+.profile-card h3 {
+    color: black;
+}
+
+.profile-card button {
+    background-color: #601243;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    margin: 10px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+button {
+    border-radius: 24px;
+    margin: 10px 10px 20px 10px;
+    height: min-content;
+    min-height: 48px;
+    padding: 12px 24px;
+    text-align: center;
+    font-size: 16px;
+    font-family: "Poppins";
+    font-weight: 600;
+    box-shadow: 0 0 0 1px var(--color-button-container-secondary-emphasis-border);
+    background-color: transparent;
+    color: #611243;
+    border: 2px solid #601243;
+}
+
+button:hover{
+    background-color: #61124350;
+    transition-delay:50ms;
+    color: #601243;
+}

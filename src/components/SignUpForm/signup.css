@@ -1,0 +1,46 @@
+.signup-container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signup-form .form-row {
+    margin: 15px 0;
+    padding: 0 10px;
+}
+
+.signup-form .form-row label > span {
+    display: inline-block;
+    width: 130px;
+    vertical-align: top;
+}
+
+.signup-form .form-row label > input, .signup-form .form-row label > textarea, .signup-form .form-row label > select {
+    border: 2px solid #611243;
+    border-radius: 3px;
+}
+
+
+
+.signup-container .signup-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 135px;
+    width: 100%;
+
+}
+
+/* .signup-container .signup-buttons button {
+    border: 2px solid #611243;
+    border-radius: 3px;
+} */
+

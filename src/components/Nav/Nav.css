@@ -53,8 +53,6 @@
     border: 2px solid #124250;
 }
 
-
-
 .nav-bar-left::after{
     display: flex;
     height: 37px;

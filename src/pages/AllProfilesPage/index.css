@@ -1,0 +1,8 @@
+#user-list {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    column-gap: 25px;
+    row-gap: 25px;
+    padding: 0% 10% 5% 10%;
+    justify-content: space-around;
+}

@@ -13,8 +13,8 @@
     width: 50;
     background:white  ;
     flex-direction:column;
-     justify-content: center;
-     align-items: center;
+    justify-content: center;
+    align-items: center;
     }
 .input-container input{
         width :60%;
@@ -39,7 +39,7 @@
 .button-login{
         line-height: 24px;
         padding: 10px 30px;
-        background: #601243 ;
+        background: #601243;
         color: white;
         border:2px solid #601243;
         outline: none;
@@ -54,7 +54,6 @@
         font-size: 16px;
         font-weight: 600;
         margin-top:15px;
-        
     }
 
 .button-login:hover{
@@ -65,7 +64,7 @@
 }
 
 
- input, a:focus {
+input, a:focus {
     border: 2px solid #124250;
 }
 
