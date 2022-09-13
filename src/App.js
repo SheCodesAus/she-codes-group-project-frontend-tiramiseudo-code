@@ -2,7 +2,6 @@ import React from "react";
 import Nav from "./components/Nav/Nav";
 import Footer from "./components/Footer/Footer";
 import AllyRouter from "./Routes/AllyRouter";
-import LoginForm from "./components/LoginForm/Login";
 
 function App() {
   return (
@@ -10,7 +9,6 @@ function App() {
       <Nav />
       <AllyRouter/>
       <Footer/>
-      
     </div>
   );
 }
