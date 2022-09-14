@@ -17,7 +17,6 @@ function App() {
 >>>>>>> Stashed changes
     </div>
   );
- 
 }
 
 // This is a test

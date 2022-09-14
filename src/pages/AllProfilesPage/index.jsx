@@ -1,53 +1,82 @@
-
 import React, { useState, useEffect } from "react";
-import { allUsers, allSkills } from "./data";
-// import { Footer } from "/../../components/Footer/footer";
-// import ProfileCard from "./components/ProfileCard/profilecard"; 
 import ProfileCard from "./profilecard";
-import FilterDropdown from "./filter";
 import "./index.css"
-
-
+ 
 function AllUsersPage() {
-    const [userList, setUserList] = useState([]);
-    const [skillList, setSkillList] = useState([]);
-
-    //local data
-    useEffect(() => {
-        setUserList(allUsers);
-        setSkillList(allSkills);
+   const [userList, setUserList] = useState([]);
+   const [skillList, setSkillList] = useState([]);
+   const [usersToShow, setUsersToShow] = useState(['all']);
+   
+   useEffect(() => {
+       fetch(`${process.env.REACT_APP_API_URL}users`)
+       .then((results) => {
+           return results.json();
+        })
+        .then((data) => {
+            console.log('all users', data)
+            setUserList(data);
+        });
     }, []);
-
-
-    // When backend API is ready:
-    // useEffect(() => {
-    //     fetch(`${process.env.REACT_APP_API_URL}users`)
-    //     .then((results) => {
-    //     return results.json();
-    //     })
-    //     .then((data) => {
-    //     setUserList(data);
-    //     });
-    // }, []);
     
-    return(
-        <div>
-            <div id="dropDown">
-                 <FilterDropdown skillData={skillList}/>
-            </div>
+   useEffect(() => {
+       fetch(`${process.env.REACT_APP_API_URL}skills`)
+       .then((results) => {
+            return results.json();
+       })
+       .then((data) => {
+            console.log('skill list', data)
+            setSkillList(data);
+       });
+   }, []);
+ 
 
-
-            <div id="user-list">
-                { userList.map((userData, key) => {
-                return <ProfileCard key={key} userData={userData}/>;
-                })}
-            </div>
-        </div>
-    );
+   const handleChange = event => {
+       
+        if (event.target.value === 'all') {
+            setUsersToShow([event.target.value]);
+            return
+        }
+        const valueString = event.target.value
+        const arrayOfUserIDs = valueString.split(',').filter((id) => Boolean(id)).map(id => Number(id))
+        setUsersToShow(arrayOfUserIDs);
+   }
   
+   return(
+      
+       <div>
+           <div id="filter">
+           <label >Find community members with the skill you are interested in:</label>
+           <select onChange={handleChange}>
+               <option value='all'> All </option>
+               {skillList.map((skill, key) => {
+                   return(
+                        <option key={skill.skill_name} value={skill.users}>{skill.skill_name}
+                        </option>
+                    );
+               })}
+           </select>
+ 
+           <div id="user-list">
+                {usersToShow.includes('all') ? (
+                        userList.map((userData, key) => 
+                            <ProfileCard key={key} userData={userData}/>
+                        )
+                    ) : (
+                        userList.map((userData, key) => {
+                            if (usersToShow.includes(userData.id)) {
+                                return <ProfileCard key={key} userData={userData}/>;
+                            }
+                            return null
+                        })
+                    )
+                }
+           </div>
+       </div>       
+          
+       </div>
+   );
  }
-
-
-/* <Footer />  */
-
+ 
+ 
 export default AllUsersPage;
+

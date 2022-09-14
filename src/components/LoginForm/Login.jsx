@@ -77,7 +77,7 @@ function LoginForm() {
         ))}
       </div>
       <div className="button-container">
-        <button type="submit" onClick={handleSubmit}>
+        <button type="submit" className="button-login" onClick={handleSubmit}>
           Login
         </button>
       </div>
