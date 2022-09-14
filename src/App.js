@@ -8,13 +8,8 @@ function App() {
   return (
     <div className="App-2">
       <Nav />
-      <AllyRouter/>
-      <Footer/>
-<<<<<<< Updated upstream
-=======
-      
-      
->>>>>>> Stashed changes
+      <AllyRouter />
+      <Footer />
     </div>
   );
 }
