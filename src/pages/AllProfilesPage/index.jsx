@@ -6,9 +6,15 @@ function AllUsersPage() {
    const [userList, setUserList] = useState([]);
    const [skillList, setSkillList] = useState([]);
    const [usersToShow, setUsersToShow] = useState(['all']);
+   const token = window.localStorage.getItem("token");
    
    useEffect(() => {
-       fetch(`${process.env.REACT_APP_API_URL}users`)
+       fetch(`${process.env.REACT_APP_API_URL}users`,{
+        headers: {
+            Authorization: `Token ${token}`,
+            "Content-Type": "application/json",
+          },
+      })
        .then((results) => {
            return results.json();
         })
@@ -50,7 +56,7 @@ function AllUsersPage() {
                <option value='all'> All </option>
                {skillList.map((skill, key) => {
                    return(
-                        <option key={skill.skill_name} value={skill.users}>{skill.skill_name}
+                        <option key={skill.id} value={skill.users}>{skill.skill_name}
                         </option>
                     );
                })}
