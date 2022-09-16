@@ -1,16 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 .signup-container {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "poppins";
     font-size: 16px;
+    margin-bottom: 100px;
     
 }
 
-.signup-form {
+/* .signup-form {
     display: flex;
     flex-direction: column;
+} */
+
+.join-label {
+    font-family: "poppins";
+    font-size: 16px;
+    color: #393939
+    
+}
+
+.join-label input {
+    /* width:40%; */
+    padding : 10px 20px;
+    outline: none;
+    margin: 20px 0;
+    /* text-align: Center; */
+    border: 2px solid #611243;
+    width: 50%;
+    border-radius: 5px;
+    font-family: "poppins";
+    font-size: 16px;
+    color: #393939;
 }
 
 .signup-form .form-row {
@@ -21,26 +45,104 @@
 .signup-form .form-row label > span {
     display: inline-block;
     width: 130px;
-    vertical-align: top;
+    vertical-align: center;
+    font-family: "Poppins";
+    font-size: 18px;
+
+
+}
+
+.form-row input{
+    width: 72%;
 }
 
 .signup-form .form-row label > input, .signup-form .form-row label > textarea, .signup-form .form-row label > select {
     border: 2px solid #611243;
     border-radius: 3px;
+    font-family: "Poppins";
+    font-size: 16px;
+    padding: 10px;
 }
 
 
 
 .signup-container .signup-buttons {
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-left: 135px;
+    padding-left: 70px;
     width: 100%;
+    font-family: "Poppins";
+    font-size: 16px;
 
 }
 
-/* .signup-container .signup-buttons button {
-    border: 2px solid #611243;
-    border-radius: 3px;
-} */
+.register-btn {
+    line-height: 24px;
+    padding: 10px 30px;
+    background: #601243;
+    color: white;
+    border:2px solid #601243;
+    outline: none;
+    border-radius: 5px ;
+    /* text-transform: uppercase; */
+    cursor: pointer;
+    /* display: flex; */
+    margin:  0 auto;
+    padding-left: 38px;
+    width: 40%;
+    font-family: "poppins";
+    font-size: 16px;
+    font-weight: 600;
+    margin-top:15px; 
+}
 
+.bio-heading{
+    vertical-align: top;
+    padding-top:10px;
+}
+
+.register-h2 {
+    font-family: "Poppins";
+    font-size: 24px;
+    font-weight: 600;
+    color: #611243;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+.register-p {
+    font-family: "Poppins";
+      font-size: 16px;
+      /* font-weight: 600; */
+      color: #393939;
+      padding-right: 20px;
+     
+  }
+
+  .content-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 45%;
+    align-items: flex-start;
+    align-content: space-around;
+    flex-wrap: nowrap;
+    margin: 0 auto;
+}
+
+.signin-style-2{
+    font-family: "Poppins";
+    font-size: 14px;
+    /* font-weight: 600; */
+    color: #393939;
+    /* padding-left:14px; */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.register-container{
+    padding-top: 50px;
+}
+  

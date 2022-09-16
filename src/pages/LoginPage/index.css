@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 .login-container{
-    align-items: center;
+    align-items: flex-start;
     display: flex;
     justify-content: space-around;
     max-width: 1128px;
@@ -11,7 +11,7 @@
 }
 
 .login-text-container {
-    width: 50%;
+    width: 40%;
     text-align: center;
 
 }
@@ -21,7 +21,7 @@
     font-size: 24px;
     font-weight: 600;
     color: #611243;
-    text-align: center;
+    text-align: left;
 }
 
 .login-h3 {
@@ -29,6 +29,7 @@
     font-size: 18.72px;
     font-weight: 600;
     color: #611243;
+    text-align: left;
   }
 
 .login-p {
@@ -36,9 +37,11 @@
     font-size: 16px;
     /* font-weight: 600; */
     color: #393939;
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    text-align: left;
+    margin-left: 10px;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
 }
 
 .login-style-2 {
@@ -67,9 +70,21 @@
 
 
 .left-side-login {
-    width: 37%;
+    width: 45%;
     /* display: flex;
     flex-wrap: wrap; */
+}
+
+.login-image {
+    border-radius: 50%;
+    width:90%;
+    height: auto;
+    align-items:left;
+}
+
+.form-display{
+    width: 80%;
+    padding-left: 14px;
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */

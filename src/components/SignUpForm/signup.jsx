@@ -57,7 +57,7 @@ function SignUpFrom () {
     const renderInput = ({name="", type="text", value="", label=""}) => {
         return (
             <div className="form-row">
-                <label>
+                <label className="join-label">
                     <span>{label}</span>
                     <input 
                         name={name}
@@ -80,7 +80,7 @@ function SignUpFrom () {
 
         return (
             <div className="form-row">
-                <label>
+                <label className="join-label">
                     <span>{label}</span>
                     <select name={name} onChange={handleChange}>
                         <option>Select your skills</option>
@@ -94,8 +94,8 @@ function SignUpFrom () {
     const renderBio = () => {
         return (
             <div className="form-row">
-                <label>
-                    <span>Bio</span>
+                <label className="join-label">
+                    <span className="bio-heading">Bio</span>
                     <textarea name="bio" rows="10" cols="50" onChange={handleChange}></textarea>
                 </label>
             </div>
@@ -143,10 +143,12 @@ function SignUpFrom () {
 
                     {renderBio()}
                 </div>
+                <p className="signin-style-2">Wait! Do you already have an account? Well why don't you<a className="login-link" href="/signup"> sign in</a></p>
+
                 <div className='signup-buttons'>
                     <button 
                     type="submit"
-                    className='login-btn'
+                    className='register-btn'
                     disabled={isSigningUp}
                     >
                         {isSigningUp ? 'Please wait...' : 'Submit'}
