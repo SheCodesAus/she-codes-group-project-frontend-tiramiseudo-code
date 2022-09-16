@@ -88,3 +88,10 @@
   align-items: center;
   display: flex;
 }
+
+#dropDown {
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-start;
+  width: 61%;
+}
