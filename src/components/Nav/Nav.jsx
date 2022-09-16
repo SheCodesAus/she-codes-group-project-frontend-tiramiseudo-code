@@ -34,7 +34,7 @@ import "./Nav.css"
                 <div className="nav-bar-right">
                 {!loggedIn ?   
                 <Link to="/signup" ><button className="join-btn" type="submit">Join now</button></Link>:null}
-                {loggedIn ? (<Link to = "/allProfiles" onClick={logOut}><button className="logout-btn" type="submit">Sign out</button></Link>) :
+                {loggedIn ? (<Link to = "/" onClick={logOut}><button className="logout-btn" type="submit">Sign out</button></Link>) :
                 <Link to="/login" ><button className="login-btn" type="submit">Sign in</button></Link>}
                 </div>
             </nav>
