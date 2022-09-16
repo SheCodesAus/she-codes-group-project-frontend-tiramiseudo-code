@@ -43,6 +43,7 @@ function AllUsersPage() {
             return
         }
         const valueString = event.target.value
+        console.log(event.target.value)
         const arrayOfUserIDs = valueString.split(',').filter((id) => Boolean(id)).map(id => Number(id))
         setUsersToShow(arrayOfUserIDs);
    }

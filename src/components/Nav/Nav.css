@@ -99,6 +99,28 @@
     transition-delay:200ms;
 }
 
+.logout-btn {
+    height: min-content;
+    min-height: 48px;
+    border-radius: 24px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: center;
+    font-size: 16px;
+    font-family: "Poppins";
+    font-weight: 600;
+    box-shadow: 0 0 0 1px #611243;
+    background-color: transparent;
+    color: #611243;
+    border: 1px solid #611243;
+}
+.logout-btn:hover {
+    background-color: #61124350;
+    /* background-color: #af26ff41; */
+    transition-delay:200ms;
+}
 .join-btn {
     height: min-content;
     min-height: 48px;
