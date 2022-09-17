@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import SignUpComponent from '../../components/SignUpForm/signup.jsx';
 import './signup.css';
 
 const initialState = {
     firstName: '',
     lastName: '',
-    proNoun: '',
+    pronoun: '',
     email: '',
     password: '',
     skills: '',
@@ -13,7 +13,19 @@ const initialState = {
 }
 function SignUpFrom () {
     const [formData, setFormData] = useState(initialState);
+    const [skillList, setSkillList] = useState([]);
     const [isSigningUp, setIsSigningUp] = useState(false);
+
+    useEffect(() => {
+        fetch(`${process.env.REACT_APP_API_URL}skills`)
+        .then((results) => {
+            return results.json();
+        })
+        .then((data) => {
+            console.log('skill list', data)
+            setSkillList(data);
+        });
+    }, []);
 
     const handleChange = (e) => {
         const newState = {
@@ -32,8 +44,8 @@ function SignUpFrom () {
             last_name: formData.lastName,
             email: formData.email,
             password: formData.password,
-            pronoun: formData.proNoun,
-            // photo: formData.photo,
+            pronoun: formData.pronoun,
+            photo: formData.photo,
             bio: formData.bio,
             skills: formData.skills,
         };
@@ -54,7 +66,13 @@ function SignUpFrom () {
         }
     }
 
-    const renderInput = ({name="", type="text", value="", label=""}) => {
+    const renderInput = ({name="", type="text", value="", label="", help = null}) => {
+        const renderHelp = () => {
+            return help ? 
+            (<div className='input-help'>{help}</div>) 
+            : null;
+        }
+
         return (
             <div className="form-row">
                 <label className="join-label">
@@ -64,27 +82,19 @@ function SignUpFrom () {
                         type={type}
                         onChange={handleChange}
                     />
+                    {renderHelp()}
                 </label>
             </div>
         )
     }
 
     const renderSkills = ({name="skills", label=""}) => {
-        const skills = [
-            {name: 'Skill 1', value: 'skill-1'},
-            {name: 'Skill 2', value: 'skill-2'},
-            {name: 'Skill 3', value: 'skill-3'},
-            {name: 'Skill 4', value: 'skill-4'},
-            {name: 'Skill 5', value: 'skill-5'},
-        ];
-
         return (
             <div className="form-row">
                 <label className="join-label">
                     <span>{label}</span>
-                    <select name={name} onChange={handleChange}>
-                        <option>Select your skills</option>
-                        {skills.map(({name, value})=>(<option key={value} value={value}>{name}</option>))}
+                    <select name={name} onChange={handleChange} multiple style={{width: '430px'}}>
+                        {skillList.map(({id, skill_name})=>(<option key={id} value={id}>{skill_name}</option>))}
                     </select>
                 </label>
             </div>
@@ -117,8 +127,8 @@ function SignUpFrom () {
                     })}
 
                     {renderInput({
-                        name: 'proNoun',
-                        label: 'Pronoun'
+                        name: 'pronoun',
+                        label: 'pronoun'
                     })}
 
                     {renderInput({
@@ -135,8 +145,14 @@ function SignUpFrom () {
 
                     {renderInput({
                         name: 'photo',
-                        type: 'file',
-                        label: 'Picture'
+                        type: 'url',
+                        label: 'Picture',
+                        help: (
+                            <span>
+                                To create your own avatar, click 
+                                <a href="https://vinicius73.github.io/gravatar-url-generator/#/" target="_blank"> here</a>
+                            </span>
+                        )
                     })}
 
                     {renderSkills({label: 'Skills'})}
