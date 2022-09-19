@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import SignUpComponent from '../../components/SignUpForm/signup.jsx';
 import './signup.css';
 
+
 const initialState = {
     firstName: '',
     lastName: '',
@@ -49,15 +50,15 @@ function SignUpFrom () {
             bio: formData.bio,
             skills: formData.skills,
         };
-
+        console.log(bodyData)
         try {
             setIsSigningUp(true);
             const result = await fetch(signUpUrl, {
                 method: 'POST',
-                body: bodyData
+                body: JSON.stringify(bodyData)
             });
             const data = await result.json();
-
+            console.log(data)
             setIsSigningUp(false);
             alert('Signup done successfully')
         } catch (error) {
